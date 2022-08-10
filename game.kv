@@ -1,0 +1,74 @@
+#:kivy 2.1.0
+Manager:
+    Home:
+    Play:
+<Home>:
+    name:'home'
+    Label:
+        id: lbl1
+        text: 'Number Guessing Game'
+        font_size: '40dp'
+        pos_hint: {'center_x': .5,'center_y': 0.7}
+    BoxLayout:
+        pos_hint: {'center_x': .5,'center_y': 0.5}
+        orientation: 'vertical'
+        size_hint: None,None
+        size_hint: '0.1dp','0.15dp'
+        spacing: "12dp"
+        Button:
+            id: btn1
+            text: 'Play'
+            font_size: '25dp'
+            background_color: 0,0,1,.8
+            on_release: 
+                root.manager.transition.direction = 'left'
+                root.manager.transition.duration = 1
+                root.manager.current = 'play'
+        Button:
+            id: btn2
+            text: 'Exit'
+            font_size: '25dp'
+            background_color: 0,0,1,.8
+<Play>:
+    name:'play'
+    RelativeLayout: 
+        position: 'vertical'
+        Label:
+            id: lbl2
+            text: ' Guess A Number\nBetween 1 to 100'
+            font_name: 'CNB'
+            font_size: '35dp'
+            pos_hint: {'center_x': .5,'center_y': 0.8}
+            color: 0,0,1,1
+        TextInput:
+            id: input
+            hint_text: '1'
+            hint_text_size: '10dp'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.65}
+            size_hint: 0.08, 0.07
+            hint_font_size: 16
+            foreground_color: 0,0,1,1
+            multiline: False
+            size_hint_y: None
+            height: 50
+            font_name: 'TNRB'
+            font_size: 32
+            halign: 'center'
+            cursor_color: (0,0,1,1)
+            input_filter: 'int'
+        Button:
+            id: btn3
+            text: 'Enter'
+            font_size: '25dp'
+            background_color: 0.3,0.3,1,1
+            pos_hint: {'center_x': .5,'center_y': 0.532}
+            size_hint: None,None
+            size_hint: '0.108dp','0.082dp'
+        Button:
+            id: btn4
+            text: 'Exit'
+            font_size: '25dp'
+            background_color: 0,0,1,.8
+            pos_hint: {'center_x': .5,'center_y': 0.18}
+            size_hint: None,None
+            size_hint: '0.0907dp','0.07dp'
